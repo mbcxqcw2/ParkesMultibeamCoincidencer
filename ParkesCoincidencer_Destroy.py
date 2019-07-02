@@ -41,7 +41,7 @@ for p in cand_pointings: #loop over all pointings in folder
                 print 'true'
                 beamlist.append(c) #group beams for same pointing and dm
 
-    cands_grouped.append(beamlist) #append group to grouped beams list
+        cands_grouped.append(beamlist) #append group to grouped beams list
 
 print cands_grouped
 

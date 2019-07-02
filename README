@@ -1,0 +1,5 @@
+This repository contains a coincidencer for the Parkes Multibeam Reciever. It will be usable with seek, destroy, dedisperse_all, presto...
+
+The allowed combinations of beams is calculated here:
+
+The candidate files are those created by the SPS_Search_Library

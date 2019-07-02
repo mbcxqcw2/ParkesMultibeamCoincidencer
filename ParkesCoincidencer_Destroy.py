@@ -45,6 +45,6 @@ for p in cand_pointings: #loop over all pointings in folder
 
 print cands_grouped
 
-
+print candfiles
 
 

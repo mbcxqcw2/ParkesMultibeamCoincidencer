@@ -19,7 +19,7 @@ candfiles = [i for i in allfiles if i[-4:]=='.pls']
 
 #sort candidates into sublist containing all beams for each pointing, DM
 
-print candfiles[0:9]
-print np.unique(candfiles[0:9])
+print candfiles[:][0:9]
+#print np.unique(candfiles[0:9])
 
 

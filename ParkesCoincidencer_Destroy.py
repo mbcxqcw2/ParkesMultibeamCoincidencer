@@ -1,9 +1,50 @@
 #test for coincidencing destroy candidates from parkes multibeam reciever observations
 
+###################################################################################################
+
 #imports
 import os
 import numpy as np
 from matplotlib import pyplot as plt
+
+###################################################################################################
+
+#functions
+
+def ReadDestroyCandFile(DestroyFile):
+    """
+    Reads in a candidate file created by charlie's modified version of the DESTROY single
+    pulse search software.
+
+    INPUTS :
+
+    DestroyFile : (str) name and location of destroy candidate file
+
+    RETURNS :
+
+    cands : (2-D array) array of candidates within file. Columns are DM, Downsamp factor, sample number, S/N
+
+
+    """
+
+    #initialise destroy candidate array (contains four columns)
+    cands=np.empty((1,4))
+    #load file
+    check=np.loadtxt(DestroyFile)
+    if check.shape!=(0,): #if cand file is not empty
+        if check.shape==(4,): #if only one candidate, reshape to allow appending
+            check=check.reshape(1,4)
+        cands=np.concatenate((cands,check),axis=0) #append candidates
+    elif check.shape==(0,):#if cand file is empty
+        print('WARNING: INPUT CANDIDATE FILE IS EMPTY') #print warning
+        return
+
+    return cands
+
+
+###################################################################################################
+
+#begin script
 
 #folder with destroy .pls candidate files to test
 folder = '/share/nas1/cwalker/SKA_work/SMC_search_dev/test_files/LorimerBurst/SMC021_008_results/'
@@ -50,7 +91,21 @@ for i in range(len(cands_grouped)):
     pointing = cands_grouped[i]
     print pointing
     
-    #read in files, add extra column for beam
+    #loop over beams in pointing
+    for j in range(len(pointing)):
+        beam = pointing[j]
+        
+        #read in first beam
+        if j==0:
+            cands = ReadDestroyCandFile(folder+beam)
+            #reassign candidates to arrays
+            dms = cands[:,0]
+            downsamp = cands[:,1]
+            sample = cands[:,2]
+            snrs = cands[:,3]
+            
+            print snrs
+
 
     #sort and merge duplicates
 

@@ -20,7 +20,7 @@ candfiles = [i for i in allfiles if i[-4:]=='.pls']
 #sort candidates into sublist containing all beams for each pointing, DM
 
 #get all unique pointing and dms
-cand_pointings=[i[0:9] for i in candfiles] #get pointings
+cand_pointings=[i[0:10] for i in candfiles] #get pointings
 cand_pointings=np.unique(cand_pointings)
 
 cand_dms = [i.split('_')[-1][0:-4] for i in candfiles] #get dms

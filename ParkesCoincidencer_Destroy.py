@@ -41,6 +41,36 @@ def ReadDestroyCandFile(DestroyFile):
 
     return cands
 
+def GenBeamID(DestroyFileName):
+    """
+    Returns the beam ID of a destroy candidate file
+
+    Based on naming convention: SMCXXX_YYBB_ZZZDM.pls
+    #where XXX_YY refers to pointing (e.g. 021_008)
+    #BB refers to beam (B1=11, B2=21, ... BD=D1)
+    #ZZZ is the dispersion measure (e.g. 631.0)
+
+
+    INPUTS :
+
+    DestroyFileName : (str) name of destroy candidate file
+
+    RETURNS :
+
+    BeamID : (str) the Beam ID of the candidate file
+
+    """
+
+    beamnumbers = ['11','21','31','41','51','61','71','81','91','A1','B1','C1','D1'] #Parkes data beam numbers
+    beamIDs     = ['B1','B2','B3','B4','B5','B6','B7','B8','B9','BA','BB','BC','BD'] #Beam IDs according to my naming convention
+
+    beamNumber = DestroyFileName.split('_')[1][-2:] #extract beam number
+    BeamID = beamIDs[np.where(beamnumbers==beamNumber)[0]]
+
+    return beamID
+    
+    
+
 
 ###################################################################################################
 
@@ -104,9 +134,10 @@ for i in range(len(cands_grouped)):
             sample = cands[:,2]
             snrs = cands[:,3]
             #create new array to hold beams cand was found in
-            print beam
+            print beam,GenBeamID(beam)
             
             print snrs
+    
 
 
     #sort and merge duplicates

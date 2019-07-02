@@ -10,6 +10,6 @@ folder = '/share/nas1/cwalker/SKA_work/SMC_search_dev/test_files/LorimerBurst/SM
 
 #list destroy files
 allfiles = os.listdir(folder)
-candfiles = [i for i in allfiles if i[-4:]='.pls']
+candfiles = [i for i in allfiles if i[-4:]=='.pls']
 
 print candfiles

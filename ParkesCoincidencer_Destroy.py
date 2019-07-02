@@ -17,7 +17,7 @@ candfiles = [i for i in allfiles if i[-4:]=='.pls']
 #BB refers to beam (B1=11, B2=21, ... BD=D1)
 #ZZZ is the dispersion measure (e.g. 631.0)
 
-#sort candidate files into sublists containing all beams for each pointing, DM
+
 
 #get all unique pointing and dms
 cand_pointings=[i[0:10] for i in candfiles] #get all pointings
@@ -27,7 +27,7 @@ cand_dms = [i.split('_')[-1][0:-4] for i in candfiles] #get all dms
 cand_dms = np.unique(cand_dms) #get uniques
 
 
-
+#sort candidate files into sublists containing all beams for each pointing, DM
 cands_grouped = [] #initialise array for grouped beams
 
 for p in cand_pointings: #loop over all pointings in folder
@@ -44,6 +44,15 @@ for p in cand_pointings: #loop over all pointings in folder
         cands_grouped.append(beamlist) #append group to grouped beams list
 
 print cands_grouped
+
+#for each group of beams
+for i in range(len(cands_grouped)):
+    pointing = cands_grouped[i]
+    print pointing
+    
+    #read in files, add extra column for beam
+
+    #sort and merge duplicates
 
 #print candfiles
 

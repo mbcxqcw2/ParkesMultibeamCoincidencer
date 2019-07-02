@@ -37,7 +37,7 @@ def ReadDestroyCandFile(DestroyFile):
         cands=np.concatenate((cands,check),axis=0) #append candidates
     elif check.shape==(0,):#if cand file is empty
         print('WARNING: INPUT CANDIDATE FILE IS EMPTY') #print warning
-        return
+        return cands
 
     return cands
 

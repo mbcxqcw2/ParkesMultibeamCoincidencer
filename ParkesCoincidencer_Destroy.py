@@ -103,6 +103,8 @@ for i in range(len(cands_grouped)):
             downsamp = cands[:,1]
             sample = cands[:,2]
             snrs = cands[:,3]
+            #create new array to hold beams cand was found in
+            print beam
             
             print snrs
 

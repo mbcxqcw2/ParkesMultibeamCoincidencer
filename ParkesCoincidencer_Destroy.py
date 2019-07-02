@@ -36,7 +36,8 @@ for p in cand_pointings: #loop over all pointings in folder
         beamlist = [] #initialise an array to hold grouped beams
 
         for c in candfiles: #loop over all candidate files
-            beamlist.append(c if (dm in c) and (p in c)) #group beams via pointing and dm
+            if (dm in c) and (p in c):
+                beamlist.append(c) #group beams via pointing and dm
 
     cands_grouped.append(beamlist) #append group to grouped beams list
 

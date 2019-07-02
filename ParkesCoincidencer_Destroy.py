@@ -36,15 +36,15 @@ for p in cand_pointings: #loop over all pointings in folder
         beamlist = [] #initialise an array to hold grouped beams
 
         for c in candfiles: #loop over all candidate files
-            print p,dm,c,(('_'+dm in c) and (p in c))
+            #print p,dm,c,(('_'+dm in c) and (p in c))
             if ('_'+dm in c) and (p in c):
-                print 'true'
+                #print 'true'
                 beamlist.append(c) #group beams for same pointing and dm
 
         cands_grouped.append(beamlist) #append group to grouped beams list
 
 print cands_grouped
 
-print candfiles
+#print candfiles
 
 

@@ -96,6 +96,7 @@ cand_pointings=np.unique(cand_pointings) #get uniques
 
 cand_dms = [i.split('_')[-1][0:-4] for i in candfiles] #get all dms
 cand_dms = np.unique(cand_dms) #get uniques
+print cand_dms
 
 
 #sort candidate files into sublists containing all beams for each pointing, DM

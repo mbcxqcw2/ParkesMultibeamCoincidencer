@@ -148,11 +148,11 @@ for i in range(len(cands_grouped)):
         #put candidates in their own arrays
 
 
-        np.concatenate((dms,cands[:,0]))
-        np.concatenate((downsamp,cands[:,1]))
-        np.concatenate((sample,cands[:,2]))
-        np.concatenate((snrs,cands[:,3]))
-        np.concatenate((beamids,beamid))
+        np.concatenate((dms,np.array(cands[:,0])))
+        np.concatenate((downsamp,np.array(cands[:,1])))
+        np.concatenate((sample,np.array(cands[:,2])))
+        np.concatenate((snrs,np.array(cands[:,3])))
+        np.concatenate((beamids,np.array(beamid)))
 
 
     print 'All',dms,downsamp,sample,snrs,beamids

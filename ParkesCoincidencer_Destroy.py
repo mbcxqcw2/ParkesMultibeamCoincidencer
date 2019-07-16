@@ -67,7 +67,7 @@ def GenBeamID(DestroyFileName):
     beamNumber = DestroyFileName.split('_')[1][-2:] #extract beam number
     print beamNumber
     BeamID = np.where(beamnumbers==beamNumber)
-
+    print 'SEARCH',BeamID
     return BeamID
     
     

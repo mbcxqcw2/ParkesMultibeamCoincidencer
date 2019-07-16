@@ -122,36 +122,33 @@ print cands_grouped
 for i in range(len(cands_grouped)):
     pointing = cands_grouped[i]
     print pointing
+    #declare empty arrays for candidates
+    dms=np.array([])
+    downsamp=np.array([])
+    sample=np.array([])
+    snrs=np.array([])
+    beamids=np.array([])
     
     #loop over beams in pointing
     for j in range(len(pointing)):
         beam = pointing[j]
-        
-        #read in first beam
-        if j==0:
-            cands = ReadDestroyCandFile(folder+beam)
-            #reassign candidates to arrays
-            dms = cands[:,0]
-            downsamp = cands[:,1]
-            sample = cands[:,2]
-            snrs = cands[:,3]
-            #create new array to hold beams cand was found in
-            beamid = np.chararray(np.shape(cands)[0],itemsize=2)
-            beamid[:]=GenBeamID(beam)
-            beamids = np.copy(beamid)
+        #extract candidates
+        cands = ReadDestroyCandFile(folder+beam)
+        #extract beam id
+        beamid = np.chararray(np.shape(cands)[0],itemsize=2)
+        beamid[:]=GenBeamID(beam)
+
             
 
 
-        #read in and append the rest of the beams
-        else:
-            cands = ReadDestroyCandFile(folder+beam)
-            np.concatenate((dms,cands[:,0]))
-            np.concatenate((downsamp,cands[:,1]))
-            np.concatenate((sample,cands[:,2]))
-            np.concatenate((snrs,cands[:,3]))
-            beamid = np.chararray(np.shape(cands)[0],itemsize=2) 
-            beamid[:]=GenBeamID(beam)
-            np.concatenate((beamids,beamid))
+        #put candidates in their own arrays
+
+
+        np.concatenate((dms,cands[:,0]))
+        np.concatenate((downsamp,cands[:,1]))
+        np.concatenate((sample,cands[:,2]))
+        np.concatenate((snrs,cands[:,3]))
+        np.concatenate((beamids,beamid))
 
 
     print snrs,beamid

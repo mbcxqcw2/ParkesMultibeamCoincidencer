@@ -146,12 +146,12 @@ for i in range(len(cands_grouped)):
         else:
             cands = ReadDestroyCandFile(folder+beam)
             np.concatenate((dms,cands[:,0]))
-            downsamp.append(cands[:,1])
-            sample.append(cands[:,2])
-            snrs.append(cands[:,3])
+            np.concatenate((downsamp,cands[:,1]))
+            np.concatenate((sample,cands[:,2]))
+            np.concatenate((snrs,cands[:,3]))
             beamid = np.chararray(np.shape(cands)[0],itemsize=2) 
             beamid[:]=GenBeamID(beam)
-            beamids.append(beamid)
+            np.concatenate(beamids,beamid))
 
 
     #sort and merge duplicates

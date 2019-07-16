@@ -131,18 +131,18 @@ for i in range(len(cands_grouped)):
     
     #loop over beams in pointing
     for j in range(len(pointing)):
-        print 'Count',j
+        #print 'Count',j
         beam = pointing[j]
-        print 'Beam',beam
+        #print 'Beam',beam
         #extract candidates
         cands = ReadDestroyCandFile(folder+beam)
-        print 'Cands',cands
+        #print 'Cands',cands
         #extract beam id
         beamid = np.chararray(np.shape(cands)[0],itemsize=2)
         beamid[:]=GenBeamID(beam)
-        print 'Beamid',beamid
+        #print 'Beamid',beamid
 
-        print cands[:,0],cands[:,1],cands[:,2],cands[:,3]
+        #print cands[:,0],cands[:,1],cands[:,2],cands[:,3]
 
 
         #put candidates in their own arrays
@@ -155,7 +155,7 @@ for i in range(len(cands_grouped)):
         beamids=np.concatenate((beamids,np.array(beamid)))
 
 
-    print 'All',dms,downsamp,sample,snrs,beamids
+    print 'All',zip(dms,downsamp,sample,snrs,beamids)
 
     #sort and merge duplicates
 

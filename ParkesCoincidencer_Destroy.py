@@ -151,7 +151,7 @@ for i in range(len(cands_grouped)):
             np.concatenate((snrs,cands[:,3]))
             beamid = np.chararray(np.shape(cands)[0],itemsize=2) 
             beamid[:]=GenBeamID(beam)
-            np.concatenate(beamids,beamid))
+            np.concatenate((beamids,beamid))
 
 
     #sort and merge duplicates

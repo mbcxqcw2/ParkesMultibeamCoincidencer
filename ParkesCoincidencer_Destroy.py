@@ -140,7 +140,7 @@ for i in range(len(cands_grouped)):
             beamid = np.chararray(np.shape(snrs),itemsize=2)
             beamid[:]=GenBeamID(beam)
             
-            print zip(snrs,beamid,sample,dms,downsamp)
+            print snrs,beamid
     
 
 

@@ -155,7 +155,7 @@ for i in range(len(cands_grouped)):
         np.concatenate((beamids,beamid))
 
 
-    print 'All'dms,downsamp,sample,snrs,beamids
+    print 'All',dms,downsamp,sample,snrs,beamids
 
     #sort and merge duplicates
 

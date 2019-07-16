@@ -140,7 +140,7 @@ for i in range(len(cands_grouped)):
             beamid[:]=GenBeamID(beam)
             beamids = np.copy(beamid)
             
-            print snrs,beamid
+
 
         #read in and append the rest of the beams
         else:
@@ -153,6 +153,8 @@ for i in range(len(cands_grouped)):
             beamid[:]=GenBeamID(beam)
             np.concatenate((beamids,beamid))
 
+
+    print snrs,beamid
 
     #sort and merge duplicates
 

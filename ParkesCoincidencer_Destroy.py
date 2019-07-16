@@ -136,7 +136,7 @@ for i in range(len(cands_grouped)):
         #print 'Beam',beam
         #extract candidates
         cands = ReadDestroyCandFile(folder+beam)
-        #print 'Cands',cands
+        print 'Cands',cands
         #extract beam id
         beamid = np.chararray(np.shape(cands)[0],itemsize=2)
         beamid[:]=GenBeamID(beam)

@@ -145,7 +145,7 @@ for i in range(len(cands_grouped)):
         #read in and append the rest of the beams
         else:
             cands = ReadDestroyCandFile(folder+beam)
-            dms.append(cands[:,0])
+            np.concatenate((dms,cands[:,0]))
             downsamp.append(cands[:,1])
             sample.append(cands[:,2])
             snrs.append(cands[:,3])

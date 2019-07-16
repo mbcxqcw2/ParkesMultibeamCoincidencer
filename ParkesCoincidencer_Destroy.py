@@ -142,7 +142,7 @@ for i in range(len(cands_grouped)):
         beamid[:]=GenBeamID(beam)
         print 'Beamid',beamid
 
-            
+        print cands[:,0],cands[:,1],cands[:,2],cands[:,3]
 
 
         #put candidates in their own arrays

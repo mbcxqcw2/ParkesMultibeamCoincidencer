@@ -123,11 +123,11 @@ for i in range(len(cands_grouped)):
     pointing = cands_grouped[i]
     print pointing
     #declare empty arrays for candidates
-    dms=np.empty(1)
-    downsamp=np.empty(1)
-    sample=np.empty(1)
-    snrs=np.empty(1)
-    beamids=np.empty(1)
+    dms=np.empty(0)
+    downsamp=np.empty(0)
+    sample=np.empty(0)
+    snrs=np.empty(0)
+    beamids=np.empty(0)
     
     #loop over beams in pointing
     for j in range(len(pointing)):

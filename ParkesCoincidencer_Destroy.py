@@ -137,7 +137,7 @@ for i in range(len(cands_grouped)):
             snrs = cands[:,3]
             #create new array to hold beams cand was found in
             print beam,GenBeamID(beam)
-            beamid = np.chararray_like(snrs)
+            beamid = np.chararray(np.shape(snrs))
             beamid[:]=GenBeamID(beam)
             
             print snrs,beamid

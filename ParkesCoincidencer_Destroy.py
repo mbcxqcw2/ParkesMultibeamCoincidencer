@@ -68,7 +68,7 @@ def GenBeamID(DestroyFileName):
     print beamNumber
     BeamID = np.where(beamnumbers==beamNumber)
 
-    return beamID
+    return BeamID
     
     
 

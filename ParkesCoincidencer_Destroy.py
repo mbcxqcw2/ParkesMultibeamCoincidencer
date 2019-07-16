@@ -131,12 +131,16 @@ for i in range(len(cands_grouped)):
     
     #loop over beams in pointing
     for j in range(len(pointing)):
+        print j
         beam = pointing[j]
+        print beam
         #extract candidates
         cands = ReadDestroyCandFile(folder+beam)
+        print cands
         #extract beam id
         beamid = np.chararray(np.shape(cands)[0],itemsize=2)
         beamid[:]=GenBeamID(beam)
+        print beamid
 
             
 

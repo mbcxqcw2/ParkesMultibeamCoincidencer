@@ -158,6 +158,7 @@ for i in range(len(cands_grouped)):
     zipcands =np.array(zip(dms,downsamp,sample,snrs,beamids))
 
     print zipcands,np.shape(zipcands)
+    print zipcands[zipcands[:,2].argsort()]
 
     #sort and merge duplicates
 

@@ -154,8 +154,10 @@ for i in range(len(cands_grouped)):
         snrs=np.concatenate((snrs,np.array(cands[:,3])))
         beamids=np.concatenate((beamids,np.array(beamid)))
 
+    #zip candidates into new array containing beam ids
+    zipcands =np.array(zip(dms,downsamp,sample,snrs,beamids))
 
-    print 'All',zip(dms,downsamp,sample,snrs,beamids)
+    print zipcands,np.shape(zipcands)
 
     #sort and merge duplicates
 

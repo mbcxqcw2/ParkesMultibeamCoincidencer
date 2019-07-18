@@ -86,8 +86,7 @@ GoodBeamList = 'AllowedParkesBeamCombos.txt'
 #load good beam combos into an array
 goodbeamcombos=[]
 with open(GoodBeamList,'r') as f:
-    line=f.readline()
-    goodbeamcombos.append(line)
+    goodbeamcombos=[line for line in f.readlines()]
 
 
 #list destroy candidate files

@@ -214,10 +214,10 @@ for i in range(len(cands_grouped)):
     for j in range(len(np.array(zipcands_merged)[:,4])):
         #sort candidate beams numerically
         sorted_beams = sorted(zipcands_merged[j][4].split())
-        print sorted_beams
+        #print sorted_beams
         #if sorted beam combination is acceptable, append candidate to new list
         if sorted_beams in goodbeamcombos:
-            zipcands_merged_checked.append(sorted_beams)
+            zipcands_merged_checked.append(zipcands_merged[j])
 
     print zipcands_merged_checked
 

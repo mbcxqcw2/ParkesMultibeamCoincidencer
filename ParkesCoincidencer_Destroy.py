@@ -219,8 +219,9 @@ for i in range(len(cands_grouped)):
         if sorted_beams in goodbeamcombos:
             zipcands_merged_checked.append(sorted_beams)
 
-    print sorted_beams
+    print zipcands_merged_checked
 
+    #write to new file
 
 
 

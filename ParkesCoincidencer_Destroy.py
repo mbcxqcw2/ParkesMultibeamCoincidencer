@@ -177,7 +177,7 @@ for i in range(len(cands_grouped)):
         #remaining candidates
         else:
             #check if timesample matches previous candidate appended to merge list
-            if cand[2]==zipcands_merged[i-1,2]:
+            if cand[2]==zipcands_merged[i-1][2]:
                 # if S/N is greater in new candidate:
                 if cand[3]>zipcands_merged[i-1,3]:
                     # append previous beams to this candidate and update merged list

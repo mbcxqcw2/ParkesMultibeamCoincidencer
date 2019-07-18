@@ -199,7 +199,7 @@ for i in range(len(cands_grouped)):
     #loop over each merged candidate:
     for j in range(len(np.array(zipcands_merged)[:,4])):
         #sort candidate beams numerically
-        print zipcands_merged[j][4].split().sort()#.join()
+        print zipcands_merged[j][4]#.split().sort()#.join()
         zipcands_merged[j][4]=zipcands_merged[j][4].split().sort().join()
     print zipcands_merged
 #print candfiles

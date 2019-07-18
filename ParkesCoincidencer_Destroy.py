@@ -180,16 +180,16 @@ for i in range(len(cands_grouped)):
         else:
             #check if timesample matches previous candidate appended to merge list
             print zipcands_merged[-1][2]#,zipcands_merged[i-1][2]
-            if cand[2]==zipcands_merged[i-1][2]:
+            if cand[2]==zipcands_merged[-1][2]:
                 # if S/N is greater in new candidate:
-                if cand[3]>zipcands_merged[i-1][3]:
+                if cand[3]>zipcands_merged[-1][3]:
                     # append previous beams to this candidate and update merged list
-                    cand[4]+=zipcands_merged[i-1][4]
-                    zipcands_merged[i-1,:]=cand
+                    cand[4]+=zipcands_merged[-1][4]
+                    zipcands_merged[-1]=cand
                 #if S/N is not greater in the new candidate:
-                if cand[3]<=zipcands_merged[i-1][3]:
+                if cand[3]<=zipcands_merged[-1][3]:
                     # append new beam to previous candidate in merge list
-                    zipcands_merged[i-1][4]+=cand[4]
+                    zipcands_merged[-1][4]+=cand[4]
             #if timesample is different to previous candidate in merge list:
             else:
                 #it is a new candidate. Append new item to merge list

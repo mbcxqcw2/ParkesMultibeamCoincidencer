@@ -217,12 +217,10 @@ for i in range(len(cands_grouped)):
         print sorted_beams
         #if sorted beam combination is acceptable, append candidate to new list
         if sorted_beams in goodbeamcombos:
-            print True
-        else:
-            print False
+            zipcands_merged_checked.append(sorted_beams)
 
-#print candfiles
-print goodbeamcombos
+    print sorted_beams
+
 
 
 

@@ -195,13 +195,20 @@ for i in range(len(cands_grouped)):
                 #it is a new candidate. Append new item to merge list
                 zipcands_merged.append(cand)
 
+    print zipcands_merged
 
-    #loop over each merged candidate:
+    #check whether beam patterns are acceptable
+    zipcands_merged_checked = []#initialise array
+
+
+    #loop over each fully merged candidate:
     for j in range(len(np.array(zipcands_merged)[:,4])):
         #sort candidate beams numerically
-        print sorted(zipcands_merged[j][4].split())#.sort()#.join()
-        zipcands_merged[j][4]=zipcands_merged[j][4].split().sort().join()
-    print zipcands_merged
+        sorted_beams = sorted(zipcands_merged[j][4].split())
+        print sorted_beams
+        #if sorted beam combination is acceptable, append candidate to new list
+
+
 #print candfiles
 
 

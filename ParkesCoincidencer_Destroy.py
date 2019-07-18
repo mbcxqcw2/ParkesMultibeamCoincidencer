@@ -169,7 +169,7 @@ for i in range(len(cands_grouped)):
     #merge duplicates
     zipcands_merged = [] #i itialise array
     #loop over candidates
-    for i in range(len(zipcands_sorted[:,2]):
+    for i in range(len(zipcands_sorted[:,2])):
         cand = zipcands_sorted[i,:]
         #first candidate
         if i==0:

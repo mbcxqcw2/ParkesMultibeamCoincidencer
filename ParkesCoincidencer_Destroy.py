@@ -216,7 +216,10 @@ for i in range(len(cands_grouped)):
         sorted_beams = sorted(zipcands_merged[j][4].split())
         print sorted_beams
         #if sorted beam combination is acceptable, append candidate to new list
-
+        if sorted_beams in goodbeamcombos:
+            print True
+        else:
+            print False
 
 #print candfiles
 print goodbeamcombos

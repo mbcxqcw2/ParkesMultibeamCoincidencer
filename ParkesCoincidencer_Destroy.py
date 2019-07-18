@@ -157,11 +157,59 @@ for i in range(len(cands_grouped)):
     #zip candidates into new array containing beam ids
     zipcands =np.array(zip(dms,downsamp,sample,snrs,beamids))
 
+    #sort candidates by sample time column
     print zipcands,np.shape(zipcands)
     print zipcands[zipcands[:,2].argsort()]
 
-    #sort and merge duplicates
 
+    zipcands_sorted = zipcands[zipcands[:,2].argsort()]
+
+
+
+    #merge duplicates
+    zipcands_merged = [] #i itialise array
+    #loop over candidates
+    for i in range(len(zipcands_sorted[:,2]):
+        cand = zipcands_sorted[i,:]
+        #first candidate
+        if i==0:
+            zipcands_merged.append(cand)
+        #remaining candidates
+        else:
+            #check if timesample matches previous candidate appended to merge list
+            if cand[2]==zipcands_merged[i-1,2]:
+                # if S/N is greater in new candidate:
+                if cand[3]>zipcands_merged[i-1,3]:
+                    # append previous beams to this candidate and update merged list
+                    cand[4]+=zipcands_merged[i-1,4]
+                    zipcands_merged[i-1,:]=cand
+                #if S/N is not greater in the new candidate:
+                if cand[3]<=zipcands_merged[i-1,3]:
+                    # append new beam to previous candidate in merge list
+                    zipcands_merged[i-1,4]+=cand[4]
+            #if timesample is different to previous candidate in merge list:
+            else:
+                #it is a new candidate. Append new item to merge list
+                zipcands_merged.append(cand)
+    print zipcands_merged
 #print candfiles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

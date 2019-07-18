@@ -194,6 +194,12 @@ for i in range(len(cands_grouped)):
             else:
                 #it is a new candidate. Append new item to merge list
                 zipcands_merged.append(cand)
+
+
+    #loop over each merged candidate:
+    for j in range(len(zipcands_merged[:,4])):
+        #sort candidate beams numerically
+        zipcands_merged[j][4]=zipcands_merged[j][4].split().sort().join()
     print zipcands_merged
 #print candfiles
 

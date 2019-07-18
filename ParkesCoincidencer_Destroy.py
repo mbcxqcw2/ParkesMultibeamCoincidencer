@@ -172,14 +172,14 @@ for i in range(len(cands_grouped)):
     for i in range(len(zipcands_sorted[:,2])):
         cand = zipcands_sorted[i,:]
         #first candidate
-        print i
+        #print i
         if i==0:
-            print zipcands_merged
+            #print zipcands_merged
             zipcands_merged.append(cand)
         #remaining candidates
         else:
             #check if timesample matches previous candidate appended to merge list
-            print zipcands_merged[-1][2]#,zipcands_merged[i-1][2]
+            #ßprint zipcands_merged[-1][2]#,zipcands_merged[i-1][2]
             if cand[2]==zipcands_merged[-1][2]:
                 # if S/N is greater in new candidate:
                 if cand[3]>zipcands_merged[-1][3]:

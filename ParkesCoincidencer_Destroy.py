@@ -179,7 +179,7 @@ for i in range(len(cands_grouped)):
         #remaining candidates
         else:
             #check if timesample matches previous candidate appended to merge list
-            print zipcands_merged[i-1],zipcands_merged[i-1][2]
+            print zipcands_merged[i-1]#,zipcands_merged[i-1][2]
             if cand[2]==zipcands_merged[i-1][2]:
                 # if S/N is greater in new candidate:
                 if cand[3]>zipcands_merged[i-1][3]:

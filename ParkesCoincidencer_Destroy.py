@@ -220,7 +220,7 @@ for i in range(len(cands_grouped)):
 
 
 #print candfiles
-print GoodBeamList
+print goodbeamcombos
 
 
 

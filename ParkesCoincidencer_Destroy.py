@@ -84,7 +84,7 @@ folder = '/share/nas1/cwalker/SKA_work/SMC_search_dev/test_files/LorimerBurst/SM
 GoodBeamList = 'AllowedParkesBeamCombos.txt'
 
 #load good beam combos into an array
-goodbeamcombos=np.loadtxt(GoodBeamList)
+goodbeamcombos=np.loadtxt(GoodBeamList,dtype=str)
 
 #list destroy candidate files
 allfiles = os.listdir(folder)

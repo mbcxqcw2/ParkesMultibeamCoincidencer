@@ -204,7 +204,7 @@ for i in range(len(cands_grouped)):
                 #it is a new candidate. Append new item to merge list
                 zipcands_merged.append(cand)
 
-    print zipcands_merged
+    #print zipcands_merged
 
     #check whether beam patterns are acceptable
     zipcands_merged_checked = []#initialise array

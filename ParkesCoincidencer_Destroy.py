@@ -219,6 +219,12 @@ for i in range(len(cands_grouped)):
         if sorted_beams in goodbeamcombos:
             zipcands_merged_checked.append(zipcands_merged[j])
 
+    #once completed list is created, merge all beam columns into single column.
+    #this makes plotting easier.
+    for j in range(len(zipcands_merged_checked)):
+        zipcands_merged_checked[j][4]=''.join(beam for beam in zipcands_merged_checked[j][4:])
+    zipcands_merged_checked=zipcands_merged_checked[:][0:4]
+
     print zipcands_merged_checked
     np.savetxt('coincidencetest.txt',zipcands_merged_checked,fmt='%s')
 

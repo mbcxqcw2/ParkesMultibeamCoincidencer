@@ -231,7 +231,7 @@ for i in range(len(cands_grouped)):
     newname = '_'.join(base_outname)
 
     #print zipcands_merged_checked
-    np.savetxt(newname,zipcands_merged_checked,fmt='%s')
+    np.savetxt(folder+'/'+newname,zipcands_merged_checked,fmt='%s')
     #print pointing
 
     #write to new file

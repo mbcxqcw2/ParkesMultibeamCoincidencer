@@ -130,7 +130,7 @@ print cands_grouped
 #for each group of beams
 for i in range(len(cands_grouped)):
     pointing = cands_grouped[i]
-    print pointing
+    print 'Coincidenting: {0}'.format(pointing)
     #declare empty arrays for candidates
     dms=np.empty(0)
     downsamp=np.empty(0)
@@ -145,7 +145,7 @@ for i in range(len(cands_grouped)):
         #print 'Beam',beam
         #extract candidates
         cands = ReadDestroyCandFile(folder+beam)
-        print 'Cands',cands
+        #print 'Cands',cands
         #extract beam id
         beamid = np.chararray(np.shape(cands)[0],itemsize=2)
         beamid[:]=GenBeamID(beam)
@@ -167,8 +167,8 @@ for i in range(len(cands_grouped)):
     zipcands =np.array(zip(dms,downsamp,sample,snrs,beamids))
 
     #sort candidates by sample time column
-    print zipcands,np.shape(zipcands)
-    print zipcands[zipcands[:,2].argsort()]
+    #print zipcands,np.shape(zipcands)
+    #print zipcands[zipcands[:,2].argsort()]
 
 
     zipcands_sorted = zipcands[zipcands[:,2].argsort()]
@@ -222,12 +222,13 @@ for i in range(len(cands_grouped)):
     #once completed list is created, merge all beam columns into single column.
     #this makes plotting easier.
     for j in range(len(zipcands_merged_checked)):
-        print 
+        #print 
         zipcands_merged_checked[j][4]=zipcands_merged_checked[j][4].replace(" ","")
 
     #create new coincidenced file name
     base_outname = pointing[0].split('_')
     base_outname[1] = base_outname[1][0:-2]+'All' #remove reference to pointing
+    base_outname[2] = base_outname[2]+'_coinc' # add coincidence label to file extension
     newname = '_'.join(base_outname)
 
     #print zipcands_merged_checked

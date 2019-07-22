@@ -227,6 +227,7 @@ for i in range(len(cands_grouped)):
 
     print zipcands_merged_checked
     np.savetxt('coincidencetest.txt',zipcands_merged_checked,fmt='%s')
+    print pointing
 
     #write to new file
 

@@ -227,12 +227,12 @@ for i in range(len(cands_grouped)):
 
     #create new coincidenced file name
     base_outname = pointing[0].split('_')
-    base_outname[1] = base_outname[1][0:-2]
-    print '_'.join(base_outname)
+    base_outname[1] = base_outname[1][0:-2]+'All' #remove reference to pointing
+    newname = '_'.join(base_outname)
 
-    print zipcands_merged_checked
-    np.savetxt('coincidencetest.txt',zipcands_merged_checked,fmt='%s')
-    print pointing
+    #print zipcands_merged_checked
+    np.savetxt(newname,zipcands_merged_checked,fmt='%s')
+    #print pointing
 
     #write to new file
 
